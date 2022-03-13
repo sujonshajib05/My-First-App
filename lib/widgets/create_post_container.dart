@@ -1,4 +1,5 @@
 import 'package:facebook_ui/models/user_model.dart';
+import 'package:facebook_ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class CreatePostContainer extends StatelessWidget {
@@ -18,11 +19,7 @@ class CreatePostContainer extends StatelessWidget {
         children: [
           Row(
             children: [
-              CircleAvatar(
-                radius: 20.0,
-                backgroundColor: Colors.grey,
-                backgroundImage: NetworkImage(currentUser.imageUrl),
-              ),
+              ProfileAvator(imageUrl: currentUser.imageUrl),
               const SizedBox(width: 6.0),
               const Expanded(
                 child: TextField(
@@ -56,7 +53,9 @@ class CreatePostContainer extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    print('Live video');
+                  },
                 ),
                 const VerticalDivider(width: 8.0),
                 ElevatedButton.icon(
@@ -76,7 +75,9 @@ class CreatePostContainer extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    print('Photo/video');
+                  },
                 ),
                 const VerticalDivider(width: 8.0),
                 ElevatedButton.icon(
@@ -96,7 +97,9 @@ class CreatePostContainer extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    print('Feeling/activity');
+                  },
                 ),
                 const VerticalDivider(width: 8.0),
               ],
