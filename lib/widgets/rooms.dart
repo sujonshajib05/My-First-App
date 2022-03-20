@@ -17,27 +17,28 @@ class Rooms extends StatelessWidget {
       height: 60,
       color: Colors.white,
       child: ListView.builder(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 10,
-          ),
-          itemCount: 1 + onlineUsers.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (BuildContext contex, int index) {
-            if (index == 0) {
-              return const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: _CreateRoomButton(),
-              );
-            }
-            final User user = onlineUsers[index - 1];
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: ProfileAvator(
-                imageUrl: user.imageUrl,
-              ),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: 10,
+        ),
+        itemCount: 1 + onlineUsers.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext contex, int index) {
+          if (index == 0) {
+            return const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: _CreateRoomButton(),
             );
-          }),
+          }
+          final User user = onlineUsers[index - 1];
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: ProfileAvator(
+              imageUrl: user.imageUrl,
+            ),
+          );
+        },
+      ),
     );
   }
 }

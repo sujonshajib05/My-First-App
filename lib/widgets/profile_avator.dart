@@ -8,7 +8,7 @@ class ProfileAvator extends StatelessWidget {
   const ProfileAvator({
     Key? key,
     required this.imageUrl,
-    this.isActive = false,
+    this.isActive = true,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
